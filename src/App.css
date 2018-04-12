@@ -1,0 +1,165 @@
+.fixed {
+  position: fixed;
+}
+
+.full-view {
+  height: 100vh;
+  width: 100%;
+}
+
+.full-heigth {
+  height: 100vh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.vertical-align-row {
+  align-items: center;
+}
+
+
+.right {
+  text-align: right;
+}
+
+.center-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container {
+  background: url('./images/bg-main.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.main-header {
+  width: 100%;
+  top: 0;
+}
+
+.navbar {
+  height: 100px;
+  width: inherit;
+  padding: 0 50px;
+  color: #ffffff;
+  background: rgba( 0, 0, 0, .6 );
+}
+
+.navigation {
+  flex-grow: 1;
+}
+
+.title {
+  font-size: inherit;
+  font-weight: 100;
+}
+
+.link {
+  margin-left: 20px;
+  font-size: 1.2em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.card {
+  background: rgba( 255, 255, 255, .8);
+  border: 2px solid #000;
+  padding: 30px;
+}
+
+.login {
+  width: 350px;
+  height: 350px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+input {
+  border: 2px solid #000;
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+  padding: 0 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+label {
+  width: max-content;
+  height: min-content;
+  position: absolute;
+  /* background: rgba( 255, 255, 255, .8 ); */
+  z-index: 1;
+  top: 23px;
+  left: 20px;
+  font-style: italic;
+  font-size: 1em;
+  transition: 0.2s ease all;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: 10px;
+  font-size: .8em;
+}
+
+.line {
+  position: relative;
+  display: block;
+  width: 60px;
+}
+
+.line:before, .line:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 0;
+  top: -30px;
+  left: 15px;
+  height: 2px;
+  transition: 0.2s ease all;
+}
+
+.line:before {
+  left: 50%;
+}
+
+.line:after {
+  right: 50%;
+}
+
+input:focus ~ .line:before, input:focus ~ .line:after {
+  width: 50%;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+button {
+  margin-top: 15px;
+  border: none;
+  background: #00CB83;
+  color: #fff;
+  height: 30px;
+}
