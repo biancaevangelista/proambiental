@@ -1,57 +1,57 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 import { auth } from './base'
+import Processos from './Processos'
 
 class AdminPage extends Component {
-  constructor( props ) {
-    super( props )
+  constructor(props) {
+    super(props)
 
     this.state = {
       isAuthing: true,
       isLoggedIn: false,
       user: null
     }
-
-    this.handleExit = this.handleExit.bind( this )
+    
+    this.handleExit = this.handleExit.bind(this)
   }
 
-  componentDidMount() {
-    auth.onAuthStateChanged( user => {
-      
-        this.setState({
-          isAuthing: false,
-          isLoggedIn: !!user,
-          user: user
-        })
-      
+  componentWillMount() {
+    this.removeAuthListener = auth.onAuthStateChanged(user => {
+      this.setState({
+        isAuthing: false,
+        isLoggedIn: !!user,
+        user: user
+      })
     })
   }
 
+
   handleExit() {
-    auth.signOut().then( () => {
-      console.log('log out')
-    }).catch( (error) => {
-      console.log(error)
-    });
+    auth.signOut()
+  }
+
+  componentWillUnmount() {
+    this.removeAuthListener()
   }
 
   render() {
-    if( this.state.isAuthing ) {
+    console.log(this.props.match.url)
+    if (this.state.isAuthing) {
       return <p>Aguarde...</p>
     }
 
-    if( !this.state.isLoggedIn ) {
-      console.log( this.state.user )
+    if (!this.state.isLoggedIn) {
       return <Redirect to='/login' />
     }
 
-    return(
+    return (
       <div>
         <h1>Admin Page</h1>
-        <h1>Bem-vindo</h1>
-
-        <button onClick={ this.handleExit }>Sair</button>
+        
+        <Route path={ `${this.props.match.url}/processos`} component={ Processos } />
+        <button onClick={this.handleExit.bind(this)}>Sair</button>
       </div>
     )
   }
