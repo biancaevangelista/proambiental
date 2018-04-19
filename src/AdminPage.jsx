@@ -37,7 +37,6 @@ class AdminPage extends Component {
   }
 
   render() {
-    console.log(this.props.match.url)
     if (this.state.isAuthing) {
       return <p>Aguarde...</p>
     }

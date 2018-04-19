@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
+  
   return (
     <header className='main-header fixed flex column'>
       <nav className='navbar flex row vertical-align-row'>
@@ -14,10 +15,10 @@ const Navbar = () => {
         <div className='navigation right'>
           <NavLink to='/sobre' className={`link`}>
             Sobre
-    </NavLink>
+          </NavLink>
           <NavLink to='/admin' className={`link`}>
             Login
-    </NavLink>
+          </NavLink>
         </div>
       </nav>
     </header>
