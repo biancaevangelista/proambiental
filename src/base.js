@@ -10,8 +10,10 @@ var config = {
   storageBucket: "rotas-app.appspot.com",
   messagingSenderId: "375833538657"
 };
-firebase.initializeApp(config);
 
+const app = firebase.initializeApp(config);
+
+const base = Rebase.createClass( app.database() )
 const auth = firebase.auth()
 
-export { auth }
+export { auth, base }

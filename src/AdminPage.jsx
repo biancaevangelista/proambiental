@@ -3,6 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 import { auth } from './base'
 import Processos from './Processos'
+import ProprietarioPage from './ProprietarioPage'
 
 class AdminPage extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class AdminPage extends Component {
         <h1>Admin Page</h1>
         
         <Route path={ `${this.props.match.url}/processos`} component={ Processos } />
+        <Route path={ `${this.props.match.url}/proprietario`} component={ ProprietarioPage } />
         <button onClick={this.handleExit.bind(this)}>Sair</button>
       </div>
     )

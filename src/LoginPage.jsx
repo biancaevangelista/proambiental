@@ -60,7 +60,7 @@ class LoginPage extends Component {
       <div>
         <Navbar />
         <div className='header-container flex row center-center full-view' >
-          <form onSubmit={this.handleClick} className="card login flex column justify-center">
+          <form onSubmit={this.handleClick} className="login-wrapper login flex column justify-center">
             
               <div className='brand-login'>
                 <h1>PRO<span className='title'>Ambiental</span></h1>
