@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
 import { auth } from './base'
+import InputField from './InputField'
 import Navbar from './Navbar'
 import './login.css'
 
@@ -66,20 +67,14 @@ class LoginPage extends Component {
                 <h1>PRO<span className='title'>Ambiental</span></h1>
                 <h5>PROGRAMA INTERNO DE LICENCIAMENTO AMBIENTAL</h5>
               </div>
-              <div className='input-wrapper'>
-                <input ref={ref => this.email = ref} id='email' type='text' required={true} />
-                <label htmlFor='email'>E-mail</label>
-                <span className='line'></span>
-              </div>
-              <div className='input-wrapper'>
-                <input ref={ref => this.passwd = ref} id='pass' type='password' required={true} />
-                <label htmlFor='pass'>Senha</label>
-                <span className='line'></span>
-              </div>
+              
+              <InputField refValue={ref => this.email = ref} idValue='email' typeValue='text' requiredValue={ true } labelText='E-mail'/>
+              
+              <InputField refValue={ref => this.passwd = ref} idValue='pass' typeValue='password' requiredValue={ true } labelText='Senha'/>
 
               {this.state.error && <p>Usuário e/ou senha inválido(s)!</p>}
 
-              <button disabled={ this.state.isLogging } type='submit'>Acessar</button>
+              <button className='button-loggout' disabled={ this.state.isLogging } type='submit'>Acessar</button>
             
           </form>
         </div>

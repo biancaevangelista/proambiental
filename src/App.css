@@ -31,6 +31,10 @@
   align-items: center;
 }
 
+.grow-1 {
+  flex-grow: 1;
+}
+
 
 .right {
   text-align: right;
@@ -76,4 +80,47 @@
   text-decoration: none;
 }
 
+.icon {
+  text-decoration: none;
+  margin: 10px;
+  cursor: pointer;
+}
 
+.icon-size-2 {
+  font-size: 2em;
+}
+
+.button-clear {
+  border: none;
+}
+
+:focus {
+  outline: none;
+}
+
+/* Font-colors */
+.font-red {
+  color: #bd2a32; 
+}
+
+.font-blue {
+  color: #80d8e6; 
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 15px;
+  color: #fff;
+  margin: 20px 0;
+  align-self: flex-start;
+  font-size: 1em; 
+}
+
+.btn-primary {
+  background-color: #5fcac6;
+}
+
+.btn-warning {
+  background-color: #cac15f;
+}
